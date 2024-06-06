@@ -1,0 +1,87 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class PostTest {
+//The following methods will conduct unit tests on 8 example posts, 2 will be valid & 6 will be invalid.
+    @Test // Test Data 1: Check the add post function with valid inputs
+    void testAddPostConditions_ValidInputs1() {
+        String[] tags = {"java", "mysql"};
+        Post testPost1 = new Post(1, "Need Help With My Java Project",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada odio quis libero commodo, nec porta arcu scelerisque. Aliquam erat volutpat. Proin varius lorem lacus, dignissim efficitur purus semper eget. Maecenas ac lorem ac neque lacinia lobortis ornare vitae lorem. Nullam eget turpis pretium nulla suscipit volutpat. Quisque gravida ultricies lobortis. Suspendisse eget mi cursus lectus maximus laoreet eu eu magna. Suspendisse potenti.Suspendisse porttitor, lorem at luctus tempus, nibh felis viverra erat, eget rhoncus neque nulla quis nisl. Praesent rutrum sit amet sem nec tincidunt. Nunc sit amet est sed tellus convallis scelerisque non vehicula ex. Suspendisse et tellus magna. Proin mi velit, facilisis eu odio sed, mattis tincidunt justo. Proin hendrerit sagittis tristique. Praesent sit amet libero sapien. In pulvinar quam et ex mollis vulputate. Sed at sapien porta, mollis nisi in, commodo dui. Fusce interdum risus sed diam facilisis, et molestie ante dapibus. Pellentesque finibus metus justo, ac faucibus nunc rutrum ut. Donec ut convallis mauris, vitae dictum purus. Quisque fermentum consequat neque, ut suscipit augue iaculis ac. Integer nulla velit, interdum quis ligula in, vulputate faucibus ipsum. Etiam interdum mi risus, at finibus ante aliquet eget. Etiam ac ex ac felis pretium viverra et vitae augue. Proin volutpat eget sapien ut facilisis. Duis accumsan turpis id eleifend sodales. Nulla lectus eros, malesuada eget mi quis, tincidunt hendrerit neque.  Nunc quis rhoncus augue, et congue arcu. Suspendisse consequat gravida lorem vitae porta. Integer accumsan, dolor vel vestibulum dapibus, est ligula venenatis justo, vitae interdum nisl turpis a.)"
+                , tags, "Easy", "Ordinary");
+        boolean result = testPost1.addPost();
+        assertTrue(result, "Your post has been uploaded");
+    }
+
+    @Test // Test Data 2: Check the add post function with valid inputs
+    void testAddPostConditions_ValidInputs2() {
+        String[] tags = {"java", "apache"};
+        Post testPost2 = new Post(2, "My Second Post. Need further help :(",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada odio quis libero commodo, nec porta arcu scelerisque. Aliquam erat volutpat. Proin varius lorem lacus, dignissim efficitur purus semper eget. Maecenas ac lorem ac neque lacinia lobortis ornare vitae lorem. Nullam eget turpis pretium nulla suscipit volutpat. Quisque gravida ultricies lobortis. Suspendisse eget mi cursus lectus maximus laoreet eu eu magna. Suspendisse potenti.Suspendisse porttitor, lorem at luctus tempus, nibh felis viverra erat, eget rhoncus neque nulla quis nisl. Praesent rutrum sit amet sem nec tincidunt. Nunc sit amet est sed tellus convallis scelerisque non vehicula ex. Suspendisse et tellus magna. Proin mi velit, facilisis eu odio sed, mattis tincidunt justo. Proin hendrerit sagittis tristique. Praesent sit amet libero sapien. In pulvinar quam et ex mollis vulputate. Sed at sapien porta, mollis nisi in, commodo dui. Fusce interdum risus sed diam facilisis, et molestie ante dapibus. Pellentesque finibus metus justo, ac faucibus nunc rutrum ut. Donec ut convallis mauris, vitae dictum purus. Quisque fermentum consequat neque, ut suscipit augue iaculis ac. Integer nulla velit, interdum quis ligula in, vulputate faucibus ipsum. Etiam interdum mi risus, at finibus ante aliquet eget. Etiam ac ex ac felis pretium viverra et vitae augue. Proin volutpat eget sapien ut facilisis. Duis accumsan turpis id eleifend sodales. Nulla lectus eros, malesuada eget mi quis, tincidunt hendrerit neque.  Nunc quis rhoncus augue, et congue arcu. Suspendisse consequat gravida lorem vitae porta. Integer accumsan, dolor vel vestibulum dapibus, est ligula venenatis justo, vitae interdum nisl turpis a.)"
+                , tags, "Difficult", "Highly Needed");
+        boolean result = testPost2.addPost();
+        assertTrue(result, "Your post has been uploaded");
+    }
+
+    @Test // Test Data 3: Check the add post function with invalid title
+    void testAddPostConditions_InValidInputs3() {
+        String[] tags = {"methods", "classes"};
+        Post testPost2 = new Post(3, "help",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada odio quis libero commodo, nec porta arcu scelerisque. Aliquam erat volutpat. Proin varius lorem lacus, dignissim efficitur purus semper eget. Maecenas ac lorem ac neque lacinia lobortis ornare vitae lorem. Nullam eget turpis pretium nulla suscipit volutpat. Quisque gravida ultricies lobortis. Suspendisse eget mi cursus lectus maximus laoreet eu eu magna. Suspendisse potenti.Suspendisse porttitor, lorem at luctus tempus, nibh felis viverra erat, eget rhoncus neque nulla quis nisl. Praesent rutrum sit amet sem nec tincidunt. Nunc sit amet est sed tellus convallis scelerisque non vehicula ex. Suspendisse et tellus magna. Proin mi velit, facilisis eu odio sed, mattis tincidunt justo. Proin hendrerit sagittis tristique. Praesent sit amet libero sapien. In pulvinar quam et ex mollis vulputate. Sed at sapien porta, mollis nisi in, commodo dui. Fusce interdum risus sed diam facilisis, et molestie ante dapibus. Pellentesque finibus metus justo, ac faucibus nunc rutrum ut. Donec ut convallis mauris, vitae dictum purus. Quisque fermentum consequat neque, ut suscipit augue iaculis ac. Integer nulla velit, interdum quis ligula in, vulputate faucibus ipsum. Etiam interdum mi risus, at finibus ante aliquet eget. Etiam ac ex ac felis pretium viverra et vitae augue. Proin volutpat eget sapien ut facilisis. Duis accumsan turpis id eleifend sodales. Nulla lectus eros, malesuada eget mi quis, tincidunt hendrerit neque.  Nunc quis rhoncus augue, et congue arcu. Suspendisse consequat gravida lorem vitae porta. Integer accumsan, dolor vel vestibulum dapibus, est ligula venenatis justo, vitae interdum nisl turpis a.)"
+                , tags, "Easy", "Ordinary");
+        boolean result = testPost2.addPost();
+        assertTrue(result, "Validation failed: Post title length must be between 10 and 250 characters.");
+    }
+
+    @Test // Test Data 4: Check the add post function with invalid title
+    void testAddPostConditions_InValidInputs4() {
+        String[] tags = {"methods", "classes"};
+        Post testPost2 = new Post(4, "broken :(",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada odio quis libero commodo, nec porta arcu scelerisque. Aliquam erat volutpat. Proin varius lorem lacus, dignissim efficitur purus semper eget. Maecenas ac lorem ac neque lacinia lobortis ornare vitae lorem. Nullam eget turpis pretium nulla suscipit volutpat. Quisque gravida ultricies lobortis. Suspendisse eget mi cursus lectus maximus laoreet eu eu magna. Suspendisse potenti.Suspendisse porttitor, lorem at luctus tempus, nibh felis viverra erat, eget rhoncus neque nulla quis nisl. Praesent rutrum sit amet sem nec tincidunt. Nunc sit amet est sed tellus convallis scelerisque non vehicula ex. Suspendisse et tellus magna. Proin mi velit, facilisis eu odio sed, mattis tincidunt justo. Proin hendrerit sagittis tristique. Praesent sit amet libero sapien. In pulvinar quam et ex mollis vulputate. Sed at sapien porta, mollis nisi in, commodo dui. Fusce interdum risus sed diam facilisis, et molestie ante dapibus. Pellentesque finibus metus justo, ac faucibus nunc rutrum ut. Donec ut convallis mauris, vitae dictum purus. Quisque fermentum consequat neque, ut suscipit augue iaculis ac. Integer nulla velit, interdum quis ligula in, vulputate faucibus ipsum. Etiam interdum mi risus, at finibus ante aliquet eget. Etiam ac ex ac felis pretium viverra et vitae augue. Proin volutpat eget sapien ut facilisis. Duis accumsan turpis id eleifend sodales. Nulla lectus eros, malesuada eget mi quis, tincidunt hendrerit neque.  Nunc quis rhoncus augue, et congue arcu. Suspendisse consequat gravida lorem vitae porta. Integer accumsan, dolor vel vestibulum dapibus, est ligula venenatis justo, vitae interdum nisl turpis a.)"
+                , tags, "Easy", "Ordinary");
+        boolean result = testPost2.addPost();
+        assertTrue(result, "Validation failed: Post title length must be between 10 and 250 characters.");
+    }
+
+    @Test // Test Data 5: Check the add post function with "Very Difficult" type and "Ordinary" status
+    void testAddPostConditions_InValidInputs5() {
+        String[] tags = {"python", "mysql"};
+        Post testPost2 = new Post(5, "Help required for Python",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada odio quis libero commodo, nec porta arcu scelerisque. Aliquam erat volutpat. Proin varius lorem lacus, dignissim efficitur purus semper eget. Maecenas ac lorem ac neque lacinia lobortis ornare vitae lorem. Nullam eget turpis pretium nulla suscipit volutpat. Quisque gravida ultricies lobortis. Suspendisse eget mi cursus lectus maximus laoreet eu eu magna. Suspendisse potenti.Suspendisse porttitor, lorem at luctus tempus, nibh felis viverra erat, eget rhoncus neque nulla quis nisl. Praesent rutrum sit amet sem nec tincidunt. Nunc sit amet est sed tellus convallis scelerisque non vehicula ex. Suspendisse et tellus magna. Proin mi velit, facilisis eu odio sed, mattis tincidunt justo. Proin hendrerit sagittis tristique. Praesent sit amet libero sapien. In pulvinar quam et ex mollis vulputate. Sed at sapien porta, mollis nisi in, commodo dui. Fusce interdum risus sed diam facilisis, et molestie ante dapibus. Pellentesque finibus metus justo, ac faucibus nunc rutrum ut. Donec ut convallis mauris, vitae dictum purus. Quisque fermentum consequat neque, ut suscipit augue iaculis ac. Integer nulla velit, interdum quis ligula in, vulputate faucibus ipsum. Etiam interdum mi risus, at finibus ante aliquet eget. Etiam ac ex ac felis pretium viverra et vitae augue. Proin volutpat eget sapien ut facilisis. Duis accumsan turpis id eleifend sodales. Nulla lectus eros, malesuada eget mi quis, tincidunt hendrerit neque.  Nunc quis rhoncus augue, et congue arcu. Suspendisse consequat gravida lorem vitae porta. Integer accumsan, dolor vel vestibulum dapibus, est ligula venenatis justo, vitae interdum nisl turpis a.)"
+                , tags, "Very Difficult", "Ordinary");
+        boolean result = testPost2.addPost();
+        assertTrue(result, "‘Very Difficult’ and ‘Difficult’ posts cannot have the status of ‘Ordinary’.");
+    }
+
+    @Test // Test Data 6: Check the add post function with "Very Difficult" type and "Ordinary" status
+    void testAddPostConditions_InValidInputs6() {
+        String[] tags = {"python", "java"};
+        Post testPost2 = new Post(6, "My Title 123",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada odio quis libero commodo, nec porta arcu scelerisque. Aliquam erat volutpat. Proin varius lorem lacus, dignissim efficitur purus semper eget. Maecenas ac lorem ac neque lacinia lobortis ornare vitae lorem. Nullam eget turpis pretium nulla suscipit volutpat. Quisque gravida ultricies lobortis. Suspendisse eget mi cursus lectus maximus laoreet eu eu magna. Suspendisse potenti.Suspendisse porttitor, lorem at luctus tempus, nibh felis viverra erat, eget rhoncus neque nulla quis nisl. Praesent rutrum sit amet sem nec tincidunt. Nunc sit amet est sed tellus convallis scelerisque non vehicula ex. Suspendisse et tellus magna. Proin mi velit, facilisis eu odio sed, mattis tincidunt justo. Proin hendrerit sagittis tristique. Praesent sit amet libero sapien. In pulvinar quam et ex mollis vulputate. Sed at sapien porta, mollis nisi in, commodo dui. Fusce interdum risus sed diam facilisis, et molestie ante dapibus. Pellentesque finibus metus justo, ac faucibus nunc rutrum ut. Donec ut convallis mauris, vitae dictum purus. Quisque fermentum consequat neque, ut suscipit augue iaculis ac. Integer nulla velit, interdum quis ligula in, vulputate faucibus ipsum. Etiam interdum mi risus, at finibus ante aliquet eget. Etiam ac ex ac felis pretium viverra et vitae augue. Proin volutpat eget sapien ut facilisis. Duis accumsan turpis id eleifend sodales. Nulla lectus eros, malesuada eget mi quis, tincidunt hendrerit neque.  Nunc quis rhoncus augue, et congue arcu. Suspendisse consequat gravida lorem vitae porta. Integer accumsan, dolor vel vestibulum dapibus, est ligula venenatis justo, vitae interdum nisl turpis a.)"
+                , tags, "Very Difficult", "Ordinary");
+        boolean result = testPost2.addPost();
+        assertTrue(result, "‘Very Difficult’ and ‘Difficult’ posts cannot have the status of ‘Ordinary’.");
+    }
+
+    @Test // Test Data 7: Check the add post function by adding more than 3 tags to an "Easy" post
+    void testAddPostConditions_InValidInputs7() {
+        String[] tags = {"tag1", "tag2", "tag3", "tag4", "tag5"};
+        Post testPost2 = new Post(7, "Need lots of help",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada odio quis libero commodo, nec porta arcu scelerisque. Aliquam erat volutpat. Proin varius lorem lacus, dignissim efficitur purus semper eget. Maecenas ac lorem ac neque lacinia lobortis ornare vitae lorem. Nullam eget turpis pretium nulla suscipit volutpat. Quisque gravida ultricies lobortis. Suspendisse eget mi cursus lectus maximus laoreet eu eu magna. Suspendisse potenti.Suspendisse porttitor, lorem at luctus tempus, nibh felis viverra erat, eget rhoncus neque nulla quis nisl. Praesent rutrum sit amet sem nec tincidunt. Nunc sit amet est sed tellus convallis scelerisque non vehicula ex. Suspendisse et tellus magna. Proin mi velit, facilisis eu odio sed, mattis tincidunt justo. Proin hendrerit sagittis tristique. Praesent sit amet libero sapien. In pulvinar quam et ex mollis vulputate. Sed at sapien porta, mollis nisi in, commodo dui. Fusce interdum risus sed diam facilisis, et molestie ante dapibus. Pellentesque finibus metus justo, ac faucibus nunc rutrum ut. Donec ut convallis mauris, vitae dictum purus. Quisque fermentum consequat neque, ut suscipit augue iaculis ac. Integer nulla velit, interdum quis ligula in, vulputate faucibus ipsum. Etiam interdum mi risus, at finibus ante aliquet eget. Etiam ac ex ac felis pretium viverra et vitae augue. Proin volutpat eget sapien ut facilisis. Duis accumsan turpis id eleifend sodales. Nulla lectus eros, malesuada eget mi quis, tincidunt hendrerit neque.  Nunc quis rhoncus augue, et congue arcu. Suspendisse consequat gravida lorem vitae porta. Integer accumsan, dolor vel vestibulum dapibus, est ligula venenatis justo, vitae interdum nisl turpis a.)"
+                , tags, "Easy", "Ordinary");
+        boolean result = testPost2.addPost();
+        assertTrue(result, "Validation failed: ‘Easy’ posts cannot have more than 3 tags");
+    }
+
+    @Test // Test Data 8: Check the add post function by adding more than 3 tags to an "Easy" post
+    void testAddPostConditions_InValidInputs8() {
+        String[] tags = {"tag1", "tag2", "tag3", "tag4"};
+        Post testPost2 = new Post(8, "Need even more help",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada odio quis libero commodo, nec porta arcu scelerisque. Aliquam erat volutpat. Proin varius lorem lacus, dignissim efficitur purus semper eget. Maecenas ac lorem ac neque lacinia lobortis ornare vitae lorem. Nullam eget turpis pretium nulla suscipit volutpat. Quisque gravida ultricies lobortis. Suspendisse eget mi cursus lectus maximus laoreet eu eu magna. Suspendisse potenti.Suspendisse porttitor, lorem at luctus tempus, nibh felis viverra erat, eget rhoncus neque nulla quis nisl. Praesent rutrum sit amet sem nec tincidunt. Nunc sit amet est sed tellus convallis scelerisque non vehicula ex. Suspendisse et tellus magna. Proin mi velit, facilisis eu odio sed, mattis tincidunt justo. Proin hendrerit sagittis tristique. Praesent sit amet libero sapien. In pulvinar quam et ex mollis vulputate. Sed at sapien porta, mollis nisi in, commodo dui. Fusce interdum risus sed diam facilisis, et molestie ante dapibus. Pellentesque finibus metus justo, ac faucibus nunc rutrum ut. Donec ut convallis mauris, vitae dictum purus. Quisque fermentum consequat neque, ut suscipit augue iaculis ac. Integer nulla velit, interdum quis ligula in, vulputate faucibus ipsum. Etiam interdum mi risus, at finibus ante aliquet eget. Etiam ac ex ac felis pretium viverra et vitae augue. Proin volutpat eget sapien ut facilisis. Duis accumsan turpis id eleifend sodales. Nulla lectus eros, malesuada eget mi quis, tincidunt hendrerit neque.  Nunc quis rhoncus augue, et congue arcu. Suspendisse consequat gravida lorem vitae porta. Integer accumsan, dolor vel vestibulum dapibus, est ligula venenatis justo, vitae interdum nisl turpis a.)"
+                , tags, "Easy", "Ordinary");
+        boolean result = testPost2.addPost();
+        assertTrue(result, "Validation failed: ‘Easy’ posts cannot have more than 3 tags");
+    }
+
+
+}
